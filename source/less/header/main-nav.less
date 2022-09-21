@@ -82,8 +82,15 @@
     min-height: 0;
   }
 
+  .main-nav.main-nav--nojs {
+    position: static;
+    margin-left: -20px;
+    margin-top: 18px;
+    margin-bottom: -22px;
+  }
+
   .main-nav--nojs .main-nav__toggle {
-    display: block;
+    display: none;
   }
 
   .main-nav--nojs .main-nav__list {
@@ -98,6 +105,7 @@
     align-items: center;
     width: auto;
     background-color: transparent;
+    z-index: 1;
   }
 
   .main-nav__toggle {

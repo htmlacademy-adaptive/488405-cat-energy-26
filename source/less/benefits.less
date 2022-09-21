@@ -1,61 +1,73 @@
 .benefits {
   position: relative;
-  width: 280px;
+  min-height: 290px;
+  padding: 43px 0;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 
   &::before {
+    content: "";
+    margin-bottom: auto;
+    width: 78px;
+    height: 80px;
+    background-image: url("../img/icon-gift.svg");
+    z-index: 2;
+  }
+
+  &::after {
     position: absolute;
     content: "";
+    top: 0;
+    left: 0;
     margin: auto;
     width: 280px;
-    height: 290px;
+    height: 100%;
     background-image:
       linear-gradient(
         rgba(105, 183, 56, 0.85),
         rgba(105, 183, 56, 0.85)
       );
   }
+}
 
-  &::after {
-    position: absolute;
-    content: "";
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 78px;
-    height: 80px;
-    background-image: url("../img/icon-gift.svg");
-  }
+.benefits__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .benefits__text {
-  position: absolute;
+  position: relative;
   margin: 0;
-  width: 161px;
-  bottom: 43px;
-  left: 50%;
-  transform: translateX(-50%);
-
+  width: 170px;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
   color: #ffffff;
+  z-index: 3;
 }
 
-@media (min-width: @tablet-width) {
+@media (min-width: @tablet-width) and (max-width: 1439px) {
   .benefits {
-    width: calc(@tablet-width - 60px);
-    height: auto;
+    min-height: 200px;
+    flex-direction: row;
+    padding: 20px 115px 20px 77px;
 
     &::before {
-      width: 100%;
-      height: 200px;
+      width: 80px;
+      height: 83px;
+      margin-bottom: 0;
+      margin-right: auto;
     }
 
     &::after {
-      width: 80px;
-      height: 83px;
-      left: 77px;
-      transform: translateX(0);
+      width: 100%;
     }
   }
 
@@ -64,11 +76,6 @@
   }
 
   .benefits__text {
-    left: auto;
-    right: 124px;
-    bottom: auto;
-    top: 50%;
-    transform: translateY(-50%) translateX(0);
     text-align: left;
   }
 }
@@ -77,32 +84,8 @@
   .benefits {
     width: 245px;
 
-    &::before {
-      height: 290px;
-      object-fit: cover;
-    }
-
     &::after {
-      top: 55px;
-      left: 83px;
-      width: 80px;
-      height: 83px;
+      width: 245px;
     }
-  }
-
-  .benefits__image {
-    display: block;
-    object-fit: cover;
-    width: 245px;
-    height: 289px;
-  }
-
-  .benefits__text {
-    left: 50%;
-    right: auto;
-    top: auto;
-    bottom: 13px;
-    transform: translateY(-50%) translateX(-50%);
-    text-align: center;
   }
 }
